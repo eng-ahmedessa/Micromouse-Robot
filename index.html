@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,8 +9,9 @@
         type="image/png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Poppins:wght@300;400;700&display=swap');
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
             background-color: #f0f7fc;
             margin: 0;
@@ -45,79 +46,17 @@
             text-align: center;
             flex-grow: 1;
             font-family: "Carter One", system-ui;
-  font-weight: 400;
-  font-style: normal;
+            font-weight: 400;
+            font-style: normal;
             color: #ffd800;
-        }
-
-        label {
-            font-weight: bold;
-            color: #2980b9;
-            margin-right: 10px;
-        }
-
-        .status {
-            font-size: 1.2em;
-            background-color: #fff;
-            border: 3px solid #2980b9;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 400px;
-            
-            /* تعديل العرض ليناسب المساحة */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .status button {
-            color: #ffffff;
-            width: auto;
-            margin: 10px 50px;
-        }
-
-        input[type="number"] {
-            padding: 10px;
-            margin: 10px;
-            width: 120px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            transition: border-color 0.3s;
-        }
-
-        input[type="number"]::placeholder {
-            color: #7f8c8d;
-            font-size: 14px;
-            opacity: 1;
-        }
-
-        input[type="number"]:focus {
-            border-color: #3498db;
-            outline: none;
-        }
-
-        button {
-            background-color: #3498db;
-            color: white;
-            padding: 12px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #2980b9;
-            transform: scale(1.05);
         }
 
         .container {
             display: flex;
             justify-content: space-around;
-            /* ترتيب العناصر بجانب بعضها */
-            margin-top: 150px;
+            margin-top: 20px;
             padding: 25px;
+            gap: 10px;
         }
 
         .input-section {
@@ -130,71 +69,91 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            border-radius: 10px;
         }
 
-        .input-section .input-item {
+        .input-item {
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 15px;
         }
 
-        .input-section label {
+        .input-item label {
             flex: 1;
             text-align: left;
+            font-weight: bold;
+            color: #2980b9;
+            font-size: 1.1rem;
         }
 
-        .input-section input[type="number"] {
+        .input-item input[type="number"] {
             flex: 2;
             margin-left: 10px;
-        }
-
-        .input-section button {
-            margin-top: 15px;
-            width: 100%;
-            padding: 14px;
-            font-size: 18px;
-        }
-
-        .footer {
-            margin-top: 50px;
-            font-size: 1em;
-            color: #95a5a6;
-        }
-
-        /* Styles for alert messages */
-        .alert {
-            display: none;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 5px;
+            padding: 10px;
             font-size: 16px;
-            width: 25%;
-            text-align: center;
-            position: fixed;
-            top: 20.6%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 20;
+            border-radius: 8px;
+            border: 2px solid #2980b9;
+            transition: border-color 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
         }
 
-        .alert.success {
-            background-color: #2ecc71;
-            color: white;
+        .input-item input[type="number"]:focus {
+            border-color: #3498db;
+            outline: none;
         }
 
-        .alert.error {
-            background-color: #e74c3c;
-            color: white;
-        }
-
-        .alert.info {
+        button {
             background-color: #3498db;
             color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .alert.active {
-            display: block;
+        button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        .status {
+            font-size: 1.2em;
+            background-color: #fff;
+            border: 3px solid #2980b9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+
+        .status button {
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            margin-bottom: 10px;
+            background-color: #2980b9;
+            border-radius: 8px;
+        }
+
+        .status p {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .status span {
+            color: #2980b9;
+            font-weight: 600;
         }
 
         #mazeCanvas {
@@ -204,9 +163,60 @@
             display: block;
             width: 400px;
             height: 400px;
+            border-radius: 8px;
         }
 
-        /* Adjust layout on small screens */
+        .control-section {
+            background-color: #fff;
+            border: 5px solid #ffd800;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+            position: relative;
+            top: 110px;
+            margin-bottom: 100px;
+        }
+
+        .control-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .control-section button {
+            font-size: 1.3rem;
+            padding: 10px 18px;
+            width: 15em;
+            height: 3em;
+            font-weight: bold;
+        }
+
+        .timer-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        #timer {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #e74c3c;
+            padding: 10px;
+            border: 2px solid #e74c3c;
+            border-radius: 8px;
+            background-color: #f9ebea;
+            display: inline-block;
+        }
+
+        /* Responsive styling for smaller screens */
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -214,13 +224,19 @@
             }
 
             .input-section,
-            #mazeCanvas {
+            #mazeCanvas,
+            .status {
                 width: 100%;
                 margin-bottom: 20px;
             }
 
-            .status {
+            .control-section {
                 width: 100%;
+            }
+
+            h1 {
+                font-size: 2rem;
+                font-weight: bold;
             }
         }
     </style>
@@ -233,15 +249,27 @@
         <h1>Micromouse Robot</h1>
     </header>
 
+    <!-- Control Section for Stage Control -->
+    <div class="control-section">
+        <div class="control-buttons">
+            <button onclick="startStage(1)">Stage 1</button>
+            <button onclick="startStage(2)">Stage 2</button>
+        </div>
+        <div class="timer-control">
+            <p id="timer">Elapsed Time: <span id="elapsedTime">0</span> seconds</p>
+            <button onclick="toggleTimer()">Start Timer</button>
+        </div>
+    </div>
+
     <div class="container">
         <div class="input-section">
             <div class="input-item">
                 <label for="endX">End Point X:</label>
-                <input type="number" id="endX" min="0" max="4" placeholder="أدخل القيمة X لنقطة النهاية" required>
+                <input type="number" id="endX" min="0" max="4" placeholder="Enter X value for the endpoint" required>
             </div>
             <div class="input-item">
                 <label for="endY">End Point Y:</label>
-                <input type="number" id="endY" min="0" max="4" placeholder="أدخل القيمة Y لنقطة النهاية" required>
+                <input type="number" id="endY" min="0" max="4" placeholder="Enter Y value for the endpoint" required>
             </div>
             <button onclick="setEndPoint()">Set End Point</button>
         </div>
@@ -249,7 +277,6 @@
         <canvas id="mazeCanvas" width="400" height="400"></canvas>
 
         <div class="status">
-            
             <button>Robot Status</button>
             <p>Movement: <span id="movement">N/A</span></p>
             <p>Position: <span id="position">X: 0, Y: 0</span></p>
@@ -258,13 +285,17 @@
     </div>
 
     <footer class="footer">
-        <p>© 2024 Micromouse Robot. All rights reserved.</p>
+        <p>© 2024 All rights reserved. OctoMind Team.</p>
     </footer>
 
     <script>
         const gridSize = 5;
         const cellSize = 80;
         let robotPosition = { x: 0, y: 0 };
+        let currentStage = 1;
+        let startTime;
+        let timerInterval;
+        let isTimerRunning = false;
 
         function showAlert(message, type) {
             const alertBox = document.createElement('div');
@@ -284,12 +315,7 @@
             let y = document.getElementById("endY").value;
 
             if (x === "" || y === "") {
-                showAlert("يرجى إدخال القيم في الحقول.", "error");
-                return;
-            }
-
-            if (isNaN(x) || isNaN(y)) {
-                showAlert("يرجى إدخال قيم صحيحة للموقع.", "error");
+                showAlert("Please enter values in the fields.", "error");
                 return;
             }
 
@@ -297,20 +323,48 @@
             y = parseInt(y);
 
             if (x < 0 || x >= gridSize || y < 0 || y >= gridSize) {
-                showAlert("القيم المدخلة غير صحيحة. يجب أن تكون القيم بين 0 و 4.", "error");
+                showAlert("Invalid values. Values must be between 0 and 4.", "error");
                 return;
             }
 
-            fetch(`/setEndPoint?x=${x}&y=${y}`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        showAlert("تم تعيين نقطة النهاية بنجاح!", "success");
-                    } else {
-                        showAlert("حدث خطأ أثناء تعيين نقطة النهاية.", "error");
-                    }
-                })
-                .catch(() => showAlert("حدث خطأ في الاتصال.", "error"));
+            robotPosition.x = x;
+            robotPosition.y = y;
+            drawMaze();
+        }
+
+        function startStage(stage) {
+            currentStage = stage;
+            resetTimer();
+            isTimerRunning = true;
+
+            timerInterval = setInterval(() => {
+                if (isTimerRunning) {
+                    let elapsed = Math.floor((Date.now() - startTime) / 1000);
+                    document.getElementById("elapsedTime").innerText = elapsed;
+                }
+            }, 1000);
+
+            if (stage === 1) {
+                showAlert("Stage 1 started: Mapping in progress.", "info");
+            } else if (stage === 2) {
+                showAlert("Stage 2 started: Please enter the endpoint.", "info");
+                setEndPoint();
+            }
+        }
+
+        function toggleTimer() {
+            isTimerRunning = !isTimerRunning;
+            const toggleButton = document.querySelector(".timer-control button");
+            toggleButton.innerText = isTimerRunning ? "Stop Timer" : "Start Timer";
+            showAlert(isTimerRunning ? "Timer started." : "Timer stopped.", isTimerRunning ? "info" : "warning");
+            if (!isTimerRunning) clearInterval(timerInterval);
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            document.getElementById("elapsedTime").innerText = 0;
+            startTime = Date.now();
+            isTimerRunning = false;
         }
 
         function drawMaze() {
